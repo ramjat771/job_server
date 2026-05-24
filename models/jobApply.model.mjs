@@ -9,12 +9,14 @@ const jobApplySchema =
         ref: "Job",
         required: true,
       },
+      
 
       // ✅ Device Id
       deviceId: {
         type: String,
         required: true,
       },
+      
 
       name: {
         type: String,

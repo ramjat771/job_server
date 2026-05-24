@@ -1,9 +1,6 @@
 import { Router } from "express";
-
 import * as controller from "../controller/job.controller.mjs";
-
 const router = Router();
-
 // Create Job
 router.post("/", controller.createJobController);
 
@@ -18,5 +15,12 @@ router.put("/:id", controller.updateJobController);
 
 // Delete Job
 router.delete("/:id", controller.deleteJobController);
+
+
+// Get Jobs By JobPosterId
+router.get(
+  "/employer/:JobPosterId",
+  controller.getJobsByJobPosterIdController
+);
 
 export default router;

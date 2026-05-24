@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 
 const jobSchema = new mongoose.Schema(
   {
+    JobPosterId: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
     title: {
       type: String,
       required: true,
@@ -42,7 +48,12 @@ const jobSchema = new mongoose.Schema(
 
     jobType: {
       type: String,
-      enum: ["Full-Time", "Part-Time", "Remote", "Internship"],
+      enum: [
+        "Full-Time",
+        "Part-Time",
+        "Remote",
+        "Internship",
+      ],
       default: "Full-Time",
     },
 

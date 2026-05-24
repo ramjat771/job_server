@@ -1,6 +1,4 @@
 import JobApply from "../models/jobApply.model.mjs";
-
-
 // ✅ Apply Job
 export const applyJobRepo =
   async (data) => {
@@ -10,7 +8,6 @@ export const applyJobRepo =
 
     return await apply.save();
   };
-
 
 // ✅ Get All Applications
 export const getAllApplicationsRepo =

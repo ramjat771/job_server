@@ -121,3 +121,23 @@ export const deleteJobController = async (
     next(err);
   }
 };
+
+
+// Get Jobs By JobPosterId
+export const getJobsByJobPosterIdController =
+  async (req, res, next) => {
+    try {
+      const jobs =
+        await service.getJobsByJobPosterId(
+          req.params.JobPosterId
+        );
+
+      return successResponse(
+        res,
+        jobs,
+        "Jobs fetched successfully"
+      );
+    } catch (err) {
+      next(err);
+    }
+  };

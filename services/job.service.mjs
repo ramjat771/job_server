@@ -15,8 +15,19 @@ export const getSingleJob = async (id) => {
   return await repo.getJobByIdRepo(id);
 };
 
+// Get Jobs By JobPosterId
+export const getJobsByJobPosterId =
+  async (JobPosterId) => {
+    return await repo.getJobsByJobPosterIdRepo(
+      JobPosterId
+    );
+  };
+
 // Update Job
-export const updateJob = async (id, body) => {
+export const updateJob = async (
+  id,
+  body
+) => {
   return await repo.updateJobRepo(id, body);
 };
 

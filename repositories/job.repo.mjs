@@ -16,11 +16,28 @@ export const getJobByIdRepo = async (id) => {
   return await Job.findById(id);
 };
 
+// Get Jobs By JobPosterId
+export const getJobsByJobPosterIdRepo =
+  async (JobPosterId) => {
+    return await Job.find({
+      JobPosterId,
+    }).sort({
+      createdAt: -1,
+    });
+  };
+
 // Update Job
-export const updateJobRepo = async (id, data) => {
-  return await Job.findByIdAndUpdate(id, data, {
-     returnDocument: "after",
-  });
+export const updateJobRepo = async (
+  id,
+  data
+) => {
+  return await Job.findByIdAndUpdate(
+    id,
+    data,
+    {
+      returnDocument: "after",
+    }
+  );
 };
 
 // Delete Job
